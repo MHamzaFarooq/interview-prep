@@ -77,3 +77,12 @@
 //     console.log(i); // Outputs: 2, 3, 5, 7
 //   }
 // }
+
+//  Operators
+// + is the only operator that can do both addition and concatenation
+// other operators work with numbers only
+// let i = 1;
+// console.log(undefined + 1);
+
+// for...in is used to iterate over the properties of an object (holds keys name)
+// for...of is used to iterate over iterable objects like arrays, strings (holds values)
