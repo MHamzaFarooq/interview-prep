@@ -86,3 +86,17 @@
 
 // for...in is used to iterate over the properties of an object (holds keys name)
 // for...of is used to iterate over iterable objects like arrays, strings (holds values)
+
+// reverse a string problem
+
+let s = ["H", "a", "n", "n", "a", "h"];
+
+function reverseArray(s) {
+  let startPointer = 0;
+  let endPointer = s.length - 1;
+  for (; startPointer < endPointer; startPointer++, endPointer--) {
+    [s[startPointer], s[endPointer]] = [s[endPointer], s[startPointer]];
+  }
+  return s;
+}
+console.log(reverseArray(s));
