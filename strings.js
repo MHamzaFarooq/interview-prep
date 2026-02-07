@@ -34,7 +34,29 @@
 // -----------------Exercises------------------
 // console.log("hamza"[0].toUpperCase() + "hamza".slice(1));
 
-function extractCurrencyValue(str) {
-  return +str.slice(1);
+// function extractCurrencyValue(str) {
+//   return +str.slice(1);
+// }
+// console.log(extractCurrencyValue("$120"));
+
+function isAnagram(s, t) {
+  let isAnagram = false;
+  let sArr = [...s];
+  let tArr = [...t];
+
+  if (sArr.length !== tArr.length) {
+    return isAnagram;
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    if (tArr.indexOf(s[i]) !== -1) {
+      tArr.splice(tArr.indexOf(s[i]), 1);
+      isAnagram = true;
+    } else {
+      return (isAnagram = false);
+    }
+  }
+  return isAnagram;
 }
-console.log(extractCurrencyValue("$120"));
+
+console.log(isAnagram("aacc", "ccac"));
