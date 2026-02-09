@@ -36,13 +36,13 @@
 // map()
 // map returns a new array with the results of calling a provided function on every element in the calling array
 
-const arrObj = [
-  { id: 1, name: "Alice" },
-  { id: 2, name: "Bob" },
-  { id: 3, name: "Charlie" },
-  { id: 2, name: "David" },
-  { id: 5, name: "Claire" },
-];
+// const arrObj = [
+//   { id: 1, name: "Alice" },
+//   { id: 2, name: "Bob" },
+//   { id: 3, name: "Charlie" },
+//   { id: 2, name: "David" },
+//   { id: 5, name: "Claire" },
+// ];
 // const foundElement = arrObj.find(function (item, index, array) {
 //   console.log(item, index, array);
 // });
@@ -67,4 +67,19 @@ const arrObj = [
 
 // some is a method that checks if at least one element in the array satisfies the condition, it returns true if at least one element satisfies the condition, otherwise it returns false.
 
-console.log(arrObj.some((item) => item.id === 2));
+// console.log(arrObj.some((item) => item.id === 2));
+// every is a method that checks if all elements in the array satisfy the condition, it returns true if all elements satisfy the condition, otherwise it returns false.
+
+function moveZeroes(nums) {
+  let lastNonZerotIndex = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      [nums[lastNonZerotIndex], nums[i]] = [nums[i], nums[lastNonZerotIndex]];
+      lastNonZerotIndex++;
+    }
+  }
+}
+nums = [0, 0, 1];
+moveZeroes(nums);
+console.log(nums);
