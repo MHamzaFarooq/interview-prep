@@ -102,12 +102,50 @@
 // Object.assign is a shallow copy like for arrays we do ... or slice()
 // GOTCHA if we have an object inside an objectm, it will be copied by reference.
 // for that we use structuredClone()
-const user1 = {
-  name: "Hamza",
-  address: {
-    city: "Lahore",
-  },
-};
-const user2 = Object.assign({}, user1);
-user2.address.city = "Karachi";
-console.log(user1.address); // false
+// const user1 = {
+//   name: "Hamza",
+//   address: {
+//     city: "Lahore",
+//   },
+// };
+// const user2 = Object.assign({}, user1);
+// user2.address.city = "Karachi";
+// console.log(user2.address === user1.address); // true because they point to the same object in memory
+
+// to fix this we need structuredClone() method
+
+// const user3 = structuredClone(user1);
+
+// GARBAGE COLLECTOR
+// when an object is unreachable, it is removed from memory automatically by the garbage collector
+// no need to go into the deets
+
+// Two Sum II
+
+// brute force approach
+function twoSum(numbers, target) {
+  //   for (let leftPtr = 0; leftPtr < numbers.length; leftPtr++) {
+  //     for (let i = leftPtr + 1; i < numbers.length; i++) {
+  //       if (numbers[leftPtr] + numbers[i] === target) {
+  //         return [leftPtr + 1, i + 1];
+  //       }
+  //     }
+  //   }
+
+  // two pointer approach
+  let leftPtr = 0;
+  let rightPtr = numbers.length - 1;
+
+  while (leftPtr < rightPtr) {
+    let sum = numbers[leftPtr] + numbers[rightPtr];
+    if (sum === target) {
+      return [leftPtr + 1, rightPtr + 1];
+    } else if (sum > target) {
+      rightPtr--;
+    } else {
+      leftPtr++;
+    }
+  }
+}
+
+console.log(twoSum([2, 5, 11, 15], 9));
