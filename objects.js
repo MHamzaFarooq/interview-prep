@@ -64,18 +64,50 @@
 // };
 // console.log(sumSalaries(salaries)); // 390
 
-function multiplyNumeric(menu) {
-  for (let key in menu) {
-    if (typeof menu[key] === "number") {
-      menu[key] *= 2;
-    }
-  }
-}
+// function multiplyNumeric(menu) {
+//   for (let key in menu) {
+//     if (typeof menu[key] === "number") {
+//       menu[key] *= 2;
+//     }
+//   }
+// }
 
-let menu = {
-  width: 200,
-  height: 300,
-  title: "My menu",
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu",
+// };
+// multiplyNumeric(menu);
+// console.log(menu);
+
+// intermediate concepts
+
+// objects are reference types
+// for example when we assign an object to another variable, we copy the address to that variable so if we change the variable, both will be affected because they point to the same object in memory
+
+// {} === {} = false
+
+// we can dupolicate an object using Object.assign() method
+// const user = {
+//   fname: "Hamza",
+//   lname: "Farooq",
+// };
+// const testUser = { isGay: true };
+// const user2 = {};
+// Object.assign(user2, user, testUser);
+// console.log(user2);
+
+// if the property already exists in the target object, it will be overwritten by the source object
+
+// Object.assign is a shallow copy like for arrays we do ... or slice()
+// GOTCHA if we have an object inside an objectm, it will be copied by reference.
+// for that we use structuredClone()
+const user1 = {
+  name: "Hamza",
+  address: {
+    city: "Lahore",
+  },
 };
-multiplyNumeric(menu);
-console.log(menu);
+const user2 = Object.assign({}, user1);
+user2.address.city = "Karachi";
+console.log(user1.address); // false
