@@ -68,12 +68,9 @@ function maxProfit(prices) {
   let maxProfit = 0;
 
   for (let i = 0; i < prices.length; i++) {
-    // 1. Update the minimum price if we find a new low
     if (prices[i] < minPrice) {
       minPrice = prices[i];
-    }
-    // 2. Otherwise, check if selling today gives us a better profit
-    else if (prices[i] - minPrice > maxProfit) {
+    } else if (prices[i] - minPrice > maxProfit) {
       maxProfit = prices[i] - minPrice;
     }
   }
