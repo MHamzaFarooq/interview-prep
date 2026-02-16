@@ -25,3 +25,7 @@ function intersection(nums1, nums2) {
 }
 
 console.log(intersection([4, 9, 5], [9, 4, 9, 8, 4]));
+
+// practiced recursion with factorial
+// sliding window technique with max sum of subarray of size k
+// two pointer technique with sorted array to find pair with given sum
