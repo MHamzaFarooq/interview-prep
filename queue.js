@@ -23,3 +23,5 @@ queue.dequeue();
 queue.dequeue();
 queue.dequeue();
 queue.dequeue();
+
+// kinda understand how this works now.
