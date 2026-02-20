@@ -1,0 +1,42 @@
+step-1
+browser makes a request from dns where the domain gets convereted into ip
+
+step-2
+TCT/IP connection is extablished between server and browser
+
+ste-3
+HTTP (protocol) request is sent to the sever.
+
+step-4
+servers sends data
+
+---
+
+XMLHTMLRequest
+
+- Old way of communicating with a server
+- XHR allows you to track exactly how many bytes have been uploaded. fetch currently makes this very difficult.
+- Aborting request is simple.
+
+---
+
+Fetch API
+
+- very simple structure
+- uses promises
+  what is a promise? it is an object which act as placeholder for the future result of the async operation
+
+Promises Lifecycle
+
+1. Pending (async task doing it's work in the bg)
+2. Setteled
+   2a. Fulfilled Promise (when successful)
+   2b. Rejected (Error during the async task)
+
+- On all promises we can call .then() method
+
+Best practice is to use Fetch API
+
+- first make the call fetch("API-Link")
+- .then() returns anotehr promise so we need to apply json() to the response (special fucntion only in promsie)
+- .then() again to finally utilize the data
