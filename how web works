@@ -40,3 +40,14 @@ Best practice is to use Fetch API
 - first make the call fetch("API-Link")
 - .then() returns anotehr promise so we need to apply json() to the response (special fucntion only in promsie)
 - .then() again to finally utilize the data
+
+------------------work flow------------------
+function getDataFromApi(){
+fetch("apiURL").then(res => res.json()).then(data => whatever but if we want to make another api call based on the data we make a fetch API request here and return it's promise and use it in the nest .then()chain).then(res => res.json()).then(data => whatever)
+}
+
+the most common beginner mistake is to utilize the nested fetch api promise on the spot which technically work but you're creating a callback hell yet again.
+
+we can handle errors individaully in the then but it is not preferred, we instead use a .catch()at the end of all the then call and it will catch any errors
+
+.finally() is the third and final method which can be attached at the end of the calls which will run regardless of the promise status (best use case of it is to remove the loading spinner).
