@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="display: flex; gap: 60px">
+      <button id="openModalButton1">Open Modal 1</button>
+      <button id="openModalButton2">Open Modal 2</button>
+      <button id="openModalButton3">Open Modal 3</button>
+    </div>
+
+    <div
+      id="modal1"
+      style="max-width: 600px; background-color: gray; display: none"
+    >
+      <div style="display: flex; justify-content: space-between">
+        <h1>Modal 1</h1>
+        <button id="closeModal">X</button>
+      </div>
+      <p>This is just a sample modal content.</p>
+    </div>
+
+    <script src="modalWindow.js"></script>
+  </body>
+</html>
